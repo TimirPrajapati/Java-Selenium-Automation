@@ -1,0 +1,96 @@
+Selenium WebDriver with Java 
+
+Selenium : 50%
+Automation Framework : 25%
+Core Java: 15%
+Miscellanious : 10% 
+
+
+Course Syllabus:
+
+1) Complete core java indepth Training
+2) Selenium Webdriver - Major Focus
+3) Selenium Grid - Parallel Cross browser testing
+4) Live Projects on Selenium
+5) Interview questions discussion with solutions
+6) Selenium Practise Assignments with Quizzes
+7) TestNG Unit Testing Framework 
+8) Maven - Build Management tool
+9) ANT   - Build management tool
+10) Jenkins - Continuous Integration tool
+11) Log4j   - Logging Mechanism 
+12) Apache POI Excel data driven testing
+13) GIT - Version control system
+14) AutoIT - Desktop Automation
+15) Test Execution reports
+16) Data drivern framwork design
+17) Hybrid framwork design
+18) Page object Model framwork 
+19) Cucumber BDD Basics
+20) Selenium Cucumber Framwork design
+21) Database testing with selenium
+22) Performance testing with selenium
+23) Mobile Automation basic only
+24) Selenium Cloud Automation with Sauce lab
+25) AutoIT- Desktop Automation integration with Selenium
+26) Bonus lecture- Bugzilla defect tool management
+
+
+Selenium Features 
+	Selenium is open source automation testing tool
+	It is exclusively for Web Based Application 
+	Selenium supports multiple browsers - Chrome, Firefox, IE, Safari
+	Selenium works with multiple platforms - Windows, OS X, Linux
+	Selenium can be coded in multiple languages - Java, c#, Javascript, php, Ruby
+
+Diffrence between Selenium IDE and Selenium Webdriver?
+	Selenium IDE :      Selenium IDE is a browser plug-in designed for recording and playing back tests.
+	Selenium WebDriver: Selenium WebDriver is a code library of APIs for controlling browsers. 
+						Initial version was Selenium Remote control, right now that is deprecated. After that Selenium WebDriver developed.
+
+Why Selenium ? --> It supports multiple platforms, multiple browsers and we can write code in multiple languages. Its open sourse as well
+
+Selenium Web Driver Architecture :
+	Once we trigger the test complete selenium code (client) which we have written will be converted to JSON Format
+	Generated JSON is sent to Browser Driven (Server) through http protocol
+		Note: Each browser contains a separate browser driver
+	Browser communicate with its respective browser and executes the commands by interpreting json which It received on the browser.
+	Browser Driver receives responses back from the browser and it sends JSON response back to client
+
+** Selenium use w3c / http protocol used to communucate with browser -- standard protocol
+
+Maven repository : this is the library where we can find all java bases libraries
+	URL : https://mvnrepository.com/
+		: https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+		: Select the latest version which we can see .. https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java/4.25.0
+
+There are two ways to use selenium java
+	1) Download all jar files and import in java project
+	2) Just copy maven selenium dependencies and place in your java project
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<dependency>
+		    <groupId>org.seleniumhq.selenium</groupId>
+		    <artifactId>selenium-java</artifactId>
+		    <version>4.25.0</version>
+		</dependency>
+
+How to add Maven in JAVA Project
+	Create java project
+	Right click on project -> Configure --> Convert to Maven Project
+	ADD details like groupID and artifactID
+
+	<dependencies>
+	  	<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<dependency>
+		    <groupId>org.seleniumhq.selenium</groupId>
+		    <artifactId>selenium-java</artifactId>
+		    <version>4.25.0</version>
+		</dependency>
+    </dependencies>
+
+
+
+
+
+
+
