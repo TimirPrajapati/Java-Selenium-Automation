@@ -1,0 +1,195 @@
+Selenium WebDriver with Java 
+
+Selenium : 50%
+Automation Framework : 25%
+Core Java: 15%
+Miscellanious : 10% 
+
+
+Course Syllabus:
+
+1) Complete core java indepth Training
+2) Selenium Webdriver - Major Focus
+3) Selenium Grid - Parallel Cross browser testing
+4) Live Projects on Selenium
+5) Interview questions discussion with solutions
+6) Selenium Practise Assignments with Quizzes
+7) TestNG Unit Testing Framework 
+8) Maven - Build Management tool
+9) ANT   - Build management tool
+10) Jenkins - Continuous Integration tool
+11) Log4j   - Logging Mechanism 
+12) Apache POI Excel data driven testing
+13) GIT - Version control system
+14) AutoIT - Desktop Automation
+15) Test Execution reports
+16) Data drivern framwork design
+17) Hybrid framwork design
+18) Page object Model framwork 
+19) Cucumber BDD Basics
+20) Selenium Cucumber Framwork design
+21) Database testing with selenium
+22) Performance testing with selenium
+23) Mobile Automation basic only
+24) Selenium Cloud Automation with Sauce lab
+25) AutoIT- Desktop Automation integration with Selenium
+26) Bonus lecture- Bugzilla defect tool management
+
+
+Selenium Features 
+	Selenium is open source automation testing tool
+	It is exclusively for Web Based Application 
+	Selenium supports multiple browsers - Chrome, Firefox, IE, Safari
+	Selenium works with multiple platforms - Windows, OS X, Linux
+	Selenium can be coded in multiple languages - Java, c#, Javascript, php, Ruby
+
+Diffrence between Selenium IDE and Selenium Webdriver?
+	Selenium IDE :      Selenium IDE is a browser plug-in designed for recording and playing back tests.
+	Selenium WebDriver: Selenium WebDriver is a code library of APIs for controlling browsers. 
+						Initial version was Selenium Remote control, right now that is deprecated. After that Selenium WebDriver developed.
+
+Why Selenium ? --> It supports multiple platforms, multiple browsers and we can write code in multiple languages. Its open sourse as well
+
+Selenium Web Driver Architecture :
+	Once we trigger the test complete selenium code (client) which we have written will be converted to JSON Format
+	Generated JSON is sent to Browser Driven (Server) through http protocol
+		Note: Each browser contains a separate browser driver
+	Browser communicate with its respective browser and executes the commands by interpreting json which It received on the browser.
+	Browser Driver receives responses back from the browser and it sends JSON response back to client
+
+** Selenium use w3c / http protocol used to communucate with browser -- standard protocol
+
+Maven repository : this is the library where we can find all java bases libraries
+	URL : https://mvnrepository.com/
+		: https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+		: Select the latest version which we can see .. https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java/4.25.0
+
+There are two ways to use selenium java
+	1) Download all jar files and import in java project
+	2) Just copy maven selenium dependencies and place in your java project
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<dependency>
+		    <groupId>org.seleniumhq.selenium</groupId>
+		    <artifactId>selenium-java</artifactId>
+		    <version>4.25.0</version>
+		</dependency>
+
+How to add Maven in JAVA Project
+	Create java project
+	Right click on project -> Configure --> Convert to Maven Project
+	ADD details like groupID and artifactID
+
+	<dependencies>
+	  	<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<dependency>
+		    <groupId>org.seleniumhq.selenium</groupId>
+		    <artifactId>selenium-java</artifactId>
+		    <version>4.25.0</version>
+		</dependency>
+    </dependencies>
+
+Right click on normal project + + configure + conconvert to maven project + it adds pom.xml is dependency file....
+
+Whenever updating something in pom.xml do below steps..
+Project -- check box doe build automatically
+
+Step-1 is invoking Browser.
+	Selenium runs with different browsers. Chrome, firefox, safari etc.
+	// chrome - ChromeDriver class --> methods()
+	// Firefox - FirefoxDriver class --> methods()
+	// safari - safariDriver class --> methods()
+
+	// all browsers have methods no matters which browser class we are using.
+
+	ChromeDriver driver = new ChromeDriver(); // import org.openqa.selenium.chrome.ChromeDriver;
+
+	every browser follow the follow same contract on top of browser class there is WebDriver interface. those all class follows the WebDriver interface.
+
+	Interface 
+		--> An interface is a group of related methods with empty bodies.
+		--> Its class responsibility to implement the methods declared in the interface
+		--> When class agreed to implement the interface, they must need to provide implementation to all the defined methods in interface.
+		--> In simple terms, Interface enforces the contract to class to follow.
+
+IMP -->	WebDriver -- Is an interface which provides set of Browser Automation methods with empty bodies (Abstract merhods)
+		--> All Browser classes implements the WebDriver interface and provide their own implementation to the WebDriver methods.
+	--> We need to create the object of the class to access the methods present in the class.
+
+		ChromeDriver driver = new ChromeDriver();
+		driver object here has access to all the menthods of Chrome driver.
+
+IMP --> WebDriver driver = new ChromeDriver();
+		driver object here has access to the methods of Chrome driver which are defined in web Driver Interface.
+
+
+chromedriver.exe --> chrome browser -- that is middle man proxy so selenium execute using that exe file.
+
+// Selenium Manager download perticular driver.exe file and execute selenium case
+
+System.setProperties("webdriver.chrome.driver","path of .exe file"); // manually setting up the driver file for automation 
+
+Way One ---
+System.setProperties("webdriver.chrome.driver","/Users/jack/Documents/chromedriver");
+WebDriver driver = new ChromeDriver();
+
+Way Two --
+WebDriver driver = new ChromeDriver();
+
+
+
+Hiting the URL on the browser
+	driver.get("URL"); 
+	//Load a new web page in the current browser window. This is done using an HTTP POST operation,and the method will block until the load is complete (with the default 'page load strategy'. 
+
+	Ex: driver.get("https://www.google.com/");
+
+To check title of webpage 
+	drive.getTitle();
+	//driver.get("https://www.google.com/");
+
+	Ex: System.out.println(driver.getTitle()); // In console title of web page prints
+
+To check exactly we are landing on the correct URL where we want to go.
+	driver.getCurrentUrl();
+
+	Ex: System.out.println(driver.getCurrentUrl()); // In console it gives the exact URL.
+
+IMP --> To close the browser
+		driver.close(). // Close the current window, quitting last window currently open. 
+		driver.quit();  // Quits this driver, closing every associated window. 
+
+If our automation scripts only works one time we will use close().
+If our automation scripts works with multiple windows we will use quit();
+
+
+Cross Browser execution -- How to run same script in different browsers like Chrome, Firefox and Edge...
+
+		// Invoking Chrome Browser
+		// System.setProperties("webdriver.chrome.driver","/Users/jack/Documents/chromedriver");
+		// WebDriver driver = new ChromeDriver();
+		
+		// Invoking Firefox Browser
+		// Firefox driver -- geckodriver
+		// WebDriver driver = new FirefoxDriver();
+		
+		// Invoking microsoft Edge Browser
+		   WebDriver driver = new EdgeDriver();
+		
+		   driver.get("https://www.google.com/");
+		   System.out.println(driver.getTitle());
+		   System.out.println(driver.getCurrentUrl());
+		   driver.close();
+		   driver.quit();
+
+: IMP Note : 
+
+Identify the WebDriver method to load a new webpage. -- get();
+Identify the WebDriver method to fetch the current URL represented in form a string. -- getCurrentUrl();
+By which method we can get title of the current page? -- getTitle();
+Identify the method that gives the source of the last page loaded. -- getPageSource();
+What is the difference between quit () and close () method? -- quit() shall quit the driver associated with all windows and close() shall close the current windows;
+In ‘public static void main (String args[]) - what is the significance of main method? -- The control of beginning of execution of a program starts from the main method.
+Select the right way of creating a WebDriver object? -- // WebDriver driver = new ChromeDriver(); OR WebDriver driver = new FirefoxDriver();
+
+
+
