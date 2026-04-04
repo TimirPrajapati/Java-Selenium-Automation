@@ -1,0 +1,152 @@
+Variable and Data types in Java.
+
+	Java supports different data types.
+	Int, String, char, etc
+
+
+	String is non-premitive data type
+	Int is premitive data type
+
++ -- use for concatination.
+" " -- Whatever write inside the double quotes that is treated as string.
+
+
+
+Array in Java 
+	
+	Array can store multiple values in single variable.
+	We can create arrays in multiple ways.
+		int[] arr = new int[5]; // only declare the array to store 5 int value.
+		arr[0] = 1; // we assign the value here and initialize.
+		arr[1] = 2; // we assign the value here and initialize.
+		arr[2] = 3; // we assign the value here and initialize.
+		arr[3] = 4; // we assign the value here and initialize.
+		arr[4] = 5; // we assign the value here and initialize.
+
+		int[] ar = {1,2,3,4,5};
+		System.out.println(ar[0]);
+
+
+
+	Array we can assign value with index 0;
+	new -- will actually create memory for the var to store the value.
+
+// for loop
+
+		int[] arr = new int[5]; // only declare the array to store 5 int value.
+		arr[0] = 1; // we assign the value here and initialize.
+		arr[1] = 2; // we assign the value here and initialize.
+		arr[2] = 3; // we assign the value here and initialize.
+		arr[3] = 4; // we assign the value here and initialize.
+		arr[4] = 5; // we assign the value here and initialize.
+		
+		for(int i=0; i<arr.length; i++) {
+			System.out.print(arr[i]);
+		}
+		
+		int[] ar = {1,2,3,4,5};
+		for(int i=0; i<ar.length; i++) {
+			System.out.print(ar[i]);
+		}
+
+		String[] name = {"Jack","Maa","Bill","Bob"};
+		for (int i=0; i<name.length; i++) {
+			System.out.println(name[i]);
+		}
+
+// Enhanced for loop
+		String[] name = {"Jack","Maa","Bill","Bob"};
+		for (String Sname: name) {
+			System.out.println(Sname);
+		}
+
+If -else condition
+
+break -- simple exits the loop. it use once we receive the result no need to check next -- script optimization it is necessary.
+
+Array is having multiple of 2 or not write program for this.
+
+Array Exploration
+Create an Array:
+
+Create a new array called numbers to store 5 numerical values of your choice (they can be whole numbers or decimals).
+
+Access and Print:
+
+Print the following:
+
+The first element of the numbers array.
+
+The last element of the numbers array.
+
+Reverse Order:
+
+Using a loop, print the elements of the numbers array in reverse order.
+
+Bonus: Element Count:
+
+Calculate the total number of elements within the numbers array.
+
+
+
+
+public class Exercise {
+    public static void main(String args[]){
+        
+        // 1. Create an Array
+        double[] numbers = {2.5, 9.0, 17.2, 5.0, 3.14};
+ 
+        // 2. Access and Print
+        System.out.println("First element: " + numbers[0]);
+        System.out.println("Last element: " + numbers[numbers.length - 1]); 
+ 
+        // 3. Reverse Order
+        System.out.println("Elements in reverse order: ");
+        for (int i = numbers.length - 1; i >= 0; i--) {
+            System.out.println(numbers[i]);
+        }
+ 
+        // 4. Bonus: Element Count
+        System.out.println("Total elements in the array: " + numbers.length);
+        
+        
+    }
+}
+
+
+Array 
+-- fixed size of array fix and memory for that array is fixed.
+-- We can not add value once declaration and all done 
+-- It gives array index out of bound in that case
+
+ArrayList
+-- It is one class in java.
+-- to access method of that class we needs to create obj.
+-- this class is comming from java.util.ArrayList so we need to import this.
+
+use for int ArrayList
+ArrayList a = new ArrayList(); 
+a.add(1);
+
+
+use for string Arraylist
+ArrayList<String> a = new ArrayList<String>();
+a.add("Jack"); // dynamic adding data
+a.add("Maa"); 
+a.remove(1);   // to remove the string from array index 1
+a.get(0);      // to extract the value from 0 index
+
+
+IMP Note : Array we use array.lenght but ArrayList we use array.size
+
+For loop to extract data from ArrayList
+
+for(int i=0; i<a.size();i++){
+	System.out.println(a.get(i));
+}
+
+
+enhanced for loop
+for (String s : a){
+	System.out.println(s);
+}
