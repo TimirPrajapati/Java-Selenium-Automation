@@ -244,3 +244,43 @@ if you see space for classes that means there are two class.. they are separated
 		driver.findElement(By.className("signInBtn")).click();
 
 We used three different locators for this id, name and className.
+
+Note: 
+	XPath and CSS Selector both are Special. those are universal.
+	We need to construct from the given HTML code.
+	there is some standard syntax for that.
+
+	CSS Selector : 	
+		<input type="text" placeholder="Username" id="inputUsername" value="">
+		
+		Class name -> tagname.classname --> Button.signInBtn
+		Id -> tagname#id  --> input#inputUsername
+
+			CSS Selector --> Tagname[attribute='value']
+		Ex: 
+			<input type="text" placeholder="Username" id="inputUsername" value="">
+			CSS Selector => input[placeholder='Username']
+
+			<p class="error">* Incorrect username or password </p>
+			CSS Selector => p.error
+
+How to know locator is unique or not?
+	In Browser developer --> Using selector hub or chropath plugin we can use.
+
+
+implicit wait -- 5 seconds time out --> It will wait for the element for 5 second and then it will monitor.
+
+how to write implicit wait :
+	-- After driver object is created we need to declare implicit wait.
+	Ex: 
+	WebDriver driver = new ChromeDriver();
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+
+	// that is globally defined so where ever locator is not visible it wait for 5 sec.
+
+Note : If any company not allow for extension we can create CSS selector in console window of developer tool when we are doing inspecting.
+
+ex: $('p.error'); hit enter it will give you the locators position if its perfect match.
+Syntax : $('Write your CSS')
+
+if it gives null that means not valid locator.
