@@ -284,3 +284,9 @@ ex: $('p.error'); hit enter it will give you the locators position if its perfec
 Syntax : $('Write your CSS')
 
 if it gives null that means not valid locator.
+
+Link Text : Link tag means if you see <a> anchor tag.
+	Click on any link 
+
+	<a href="#" xpath="1">Forgot your password?</a>
+	Ex: driver.findElement(By.linkText("Forgot your password?")).click();
