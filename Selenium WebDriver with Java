@@ -290,3 +290,16 @@ Link Text : Link tag means if you see <a> anchor tag.
 
 	<a href="#" xpath="1">Forgot your password?</a>
 	Ex: driver.findElement(By.linkText("Forgot your password?")).click();
+
+
+Xpath and CSS Selector both are generic locators we can construct with any html elements.
+Xpath :
+	//Tagname[@attribute='value']
+
+	<input type="text" placeholder="Name">
+	Ex: 
+		Xpath : //input[@placeholder='Name']	
+		CSS   : input[placeholder='Name']
+
+		
+
