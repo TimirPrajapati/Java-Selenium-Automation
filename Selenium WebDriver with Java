@@ -301,5 +301,21 @@ Xpath :
 		Xpath : //input[@placeholder='Name']	
 		CSS   : input[placeholder='Name']
 
-		
+if multiple elements matching we will use indexing so we will fine unique element.
+		//Tagname[@attribute='value'][indexvalue]
+	Ex: //input[@type='text'][2]
+	This we can not use in cssSelector it only use in xpath only
+
+	For cssSelector we need to use like below. because there are some hidden element you need to check uniquely and need to use proper unique attribute.
+	Ex: 
+	cssSelector --> input[type='text']:nth-child(3)
+
+So if there is no unique element then we need to use indexing either we use xpath with indexing or css with indexing.
+
+
+Generating xpath with parent tochild tags traverse..
+		Xpath : //parent-Tagname/child-Tagname[index]
+
+Sometimes there is no attribut so we can use above things to write xpath for 		
+		css: parentTagname<space>childTagname
 
