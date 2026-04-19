@@ -319,3 +319,16 @@ Generating xpath with parent tochild tags traverse..
 Sometimes there is no attribut so we can use above things to write xpath for 		
 		css: parentTagname<space>childTagname
 
+if we are moving one view to another view use wait();
+When application is changing from one view to another view we might run in interception error we can use Thread.sleep(1000); so it waits 1 second.
+
+
+driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5)); -->something to show on page [ waiting for object to show on the page]
+
+Thread.sleep means -->  something to get in stable state (Ex: onclick window changing in one side to another)
+
+
+* represennt regular expression.
+If we want  to find element with partial text we will use regular expression in css syntax.
+
+Ex: Regular Expression cssSelector : input[type*='pass'] --> so it will point to the input type="password" 
