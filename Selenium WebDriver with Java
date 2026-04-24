@@ -332,3 +332,7 @@ Thread.sleep means -->  something to get in stable state (Ex: onclick window cha
 If we want  to find element with partial text we will use regular expression in css syntax.
 
 Ex: Regular Expression cssSelector : input[type*='pass'] --> so it will point to the input type="password" 
+
+
+
+
