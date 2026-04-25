@@ -334,5 +334,34 @@ If we want  to find element with partial text we will use regular expression in 
 Ex: Regular Expression cssSelector : input[type*='pass'] --> so it will point to the input type="password" 
 
 
+input[type*='pass'] -- cssSelector
+
+//button[contains(@class,'submit')] -- Regular Expression
+
+customised xpath 
+parent to child using tag and attribute.
+//div[@class='forgot-pwd-btn-conainer']
+//div[@class='forgot-pwd-btn-conainer']/button[1] -- parent child and index as multiple child so
 
 
+<div class="forgot-pwd-btn-conainer" xpath="1"><button class="go-to-login-btn">Go to Login</button><button class="reset-pwd-btn">Reset Login</button></div>
+
+//div[@class='forgot-pwd-btn-conainer']/button[1]
+
+driver.findElement(By.tagName("p")) -- if there is only one tage on html page we can use this.
+
+
+Dynamic name pass in text box and checking assertion after login.
+
+		String name = "Jack"; // Dynamic name pass
+		WebDriver driver = new ChromeDriver();
+		// implicit wait -- 5 seconds time out.
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		driver.get("https://rahulshettyacademy.com/locatorspractice/");
+		driver.findElement(By.id("inputUsername")).sendKeys(name);
+		driver.findElement(By.name("inputPassword")).sendKeys("rahulshettyacademy");
+		driver.findElement(By.className("signInBtn")).click();
+		Thread.sleep(1000);
+		System.out.println(driver.findElement(By.tagName("p")).getText());
+		Assert.assertEquals(driver.findElement(By.tagName("p")).getText(), "You are successfully logged in.");
+		Assert.assertEquals(driver.findElement(By.cssSelector("div[class='login-container'] h2")).getText(),"Hello "+name+",");
